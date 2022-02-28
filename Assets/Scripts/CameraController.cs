@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Transform trans;
+    private Transform trans;
     [SerializeField] private RoadGenerator road;
+    private void Start()
+    {
+        trans = GameObject.FindGameObjectWithTag("Player1").GetComponent<Transform>();    
+    }
     private void Update()
     {
         if (transform.position.x < road.transform.position.x + road.width * road.count)
-            transform.position = new Vector3(trans.position.x,transform.position.y,-10);
+            transform.position = new Vector3(trans.position.x + 2,transform.position.y,-10);
     }
 }

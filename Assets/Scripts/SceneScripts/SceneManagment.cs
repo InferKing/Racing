@@ -16,4 +16,8 @@ public class SceneManagment : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public static void Garage()
+    {
+        SceneManager.LoadScene("Garage");
+    }
 }

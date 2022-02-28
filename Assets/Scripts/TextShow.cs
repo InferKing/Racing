@@ -6,14 +6,26 @@ using UnityEngine.UI;
 public class TextShow : MonoBehaviour
 {
     [SerializeField] private RoadGenerator road;
-    [SerializeField] private CarBehaviour car;
     [SerializeField] private GameObject[] gObj;
-    private float total;
+    private CarBehaviour car;
+    private float total, time = 0;
 
+    private void Start()
+    {
+        car = GameObject.FindGameObjectWithTag("Player1").GetComponent<CarBehaviour>();
+    }
     private void Update()
     {
         if (DataPlayer.isWinner != 0)
+        {
+            time += Time.deltaTime;
             gObj[DataPlayer.isWinner - 1].SetActive(true);
+            if (time > 3)
+            {
+                PlayerController.AddPrize();
+                SceneManagment.MainMenu();
+            }
+        }
         SetText();
     }
 

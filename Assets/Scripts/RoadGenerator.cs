@@ -17,6 +17,7 @@ public class RoadGenerator : MonoBehaviour
             gObj.transform.position = new Vector2(transform.position.x + width * i, transform.position.y);
             if (i == count)
             {
+                gObj.tag = "Finish";
                 boxColl = gObj.AddComponent<BoxCollider2D>();
                 boxColl.isTrigger = true;
             }

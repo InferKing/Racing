@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class Player
 {
-    public SpriteRenderer sprite;
-    public Rigidbody2D rb2D;
-    public BoxCollider2D coll2D;
+    public string sprite;
     public float mass;
     public float vel;
     public float maxSpeed;
+    public float transm;
 
-    public Player(SpriteRenderer sprite, Rigidbody2D rb2D, BoxCollider2D coll2D, float mass, float vel, float maxSpeed)
+    public Player(string sprite, float mass, float vel, float maxSpeed, float transm)
     {
         this.sprite = sprite;
-        this.rb2D = rb2D;
-        this.coll2D = coll2D;
         this.mass = mass;
         this.vel = vel;
         this.maxSpeed = maxSpeed;
+        this.transm = transm;
     }
+}
+
+public class Detail : MonoBehaviour
+{
+    public Sprite sprite { get; set; }
+    public float mass { get; set; }
+    public float vel { get; set; }
+    public float maxSpeed { get; set; }
+    public float transm { get; set; }
+    public float price { get; set; }
+    public int level;
+
 }

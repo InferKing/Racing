@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class PlayersManagement : MonoBehaviour
 {
-    [SerializeField] private GameObject[] gameObjects;
+    private GameObject[] gameObjects;
     private bool wasTouched = false;
+
+    private void Start()
+    {
+        gameObjects = new GameObject[2];
+        gameObjects[0] = GameObject.FindGameObjectWithTag("Player1");
+        gameObjects[1] = GameObject.FindGameObjectWithTag("Player2");
+    }
     private void Update()
     {
         if (DataPlayer.isWinner != 0 && !wasTouched)

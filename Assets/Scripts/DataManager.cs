@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class DataManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject[] gObjs;
+    public static GameObject[] gameObjects;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        gameObjects = new GameObject[gObjs.Length];
+        for (int i = 0; i < gObjs.Length; i++)
+        {
+            gameObjects[i] = gObjs[i];
+        }
     }
 }
